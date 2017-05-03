@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://example/" targetNamespace="http://example/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="mobileSearchUpdate" type="tns:mobileSearchUpdate" />
+  <xs:element name="mobileSearchUpdateResponse" type="tns:mobileSearchUpdateResponse" />
+  <xs:element name="sayHelloWorldFrom" type="tns:sayHelloWorldFrom" />
+  <xs:element name="sayHelloWorldFromResponse" type="tns:sayHelloWorldFromResponse" />
+  <xs:complexType name="sayHelloWorldFrom">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sayHelloWorldFromResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mobileSearchUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="tns:bizType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mobileSearchUpdateResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:simpleType name="bizType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Leads" />
+      <xs:enumeration value="Shop" />
+      <xs:enumeration value="Order" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
